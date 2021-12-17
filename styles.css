@@ -9,12 +9,46 @@ black - #000000;
 
 body {
   font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf)
+
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.static-text {
+  color: #ffffff;
+}
 
+.button-box {
+  background-color: #ffffff;
+  width: 30%;
+  border radius: 30px;
 
+}
 
-/* * {
-  border-color: blue;
-} */
+.message-box {
+  background-color: #ffffff;
+  width: 65%;
+  border radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.receive-button-box {
+  display: flex;
+  justify-content: center;
+}
+
+.recieve-msg-button {
+  background-color: #134d71;
+  color: #ffffff;
+}
