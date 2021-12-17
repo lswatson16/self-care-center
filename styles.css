@@ -22,15 +22,28 @@ main {
   height: 100vh;
 }
 
-.static-text {
+h1, h3 {
   color: #ffffff;
+}
+
+/* h1 {
+  margin-bottom: 0;
+} */
+
+h3 {
+  margin-bottom: 0;
+  padding: 5px
 }
 
 .button-box {
   background-color: #ffffff;
-  width: 30%;
+  width: 38%;
   border-radius: 4px;
-
+  /* padding-top: 10px;
+  padding-bottom: 5px;
+  padding-right: 40px;
+  padding-left: 40px; */
+  padding: 10px 20px 5px;
 }
 
 .message-box {
@@ -39,6 +52,7 @@ main {
   border-radius: 4px;
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .radio-buttons {
@@ -49,9 +63,16 @@ main {
 .receive-button-box {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .recieve-msg-button {
   background-color: #134d71;
   color: #ffffff;
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+input {
+  margin-right: -70px
 }
