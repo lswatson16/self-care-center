@@ -34,15 +34,15 @@ h3 {
   font-size: 0.810em;
 }
 
-h5 {
+.message {
   font-weight: normal;
 }
 
 .button-box {
   background-color: #ffffff;
-  width: 38%;
+  width: 30%;
   border-radius: 4px;
-  padding: 10px 10px 5px;
+  padding: 6px 10px 5px;
 }
 
 .message-box {
@@ -51,15 +51,19 @@ h5 {
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  padding: 2px 20px;
+  padding: 10px 20px;
   font-size: 0.910em;
 }
 
 .radio-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-style: italic;
   font-size: 0.735em;
+}
+
+.affirmation-button{
+  margin-right: 40px;
 }
 
 .receive-button-box {
@@ -77,5 +81,5 @@ h5 {
 }
 
 input {
-  margin-right: -90px;
+  margin-right: 7px;
 }

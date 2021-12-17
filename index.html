@@ -13,17 +13,23 @@
       </header>
       <h3>Which type of message?</h3>
       <div class='button-box'>
-        <div class= 'radio-buttons'>
-          <input type= 'radio'>affirmation</input>
-          <input type= 'radio'>mantra</input>
+        <div class='radio-buttons'>
+          <div class='affirmation-button'>
+            <input type='radio' id='message-choice' name='message' value='affirmation'>
+              <label for= 'message-choice'>affirmation</label>
+          </div>
+          <div class='mantra-button'>
+            <input type='radio' id='message-choice' name='message' value='mantra'>
+              <label for= 'message-choice'>mantra</label>
+          </div>
         </div>
-        <div class= 'receive-button-box'>
-          <button class= 'recieve-msg-button'>Receive Message</button>
+        <div class='receive-button-box'>
+          <button class='recieve-msg-button'>Receive Message</button>
         </div>
       </div>
-      <div class= 'message-box'>
+      <div class='message-box'>
         <img src=''>
-        <h5 class= 'message'>This is your affirmation for the day</h5>
+        <h5 class='message'>This is your affirmation for the day</h5>
       </div>
     </main>
   </body>
