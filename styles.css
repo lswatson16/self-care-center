@@ -9,12 +9,77 @@ black - #000000;
 
 body {
   font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf)
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
 
+h1, h3 {
+  color: #ffffff;
+}
 
+h1 {
+  font-size: .975em;
+  padding-bottom: 10px;
+}
 
+h3 {
+  margin-bottom: 0;
+  padding: 5px;
+  font-size: 0.810em;
+}
 
-/* * {
-  border-color: blue;
-} */
+h5 {
+  font-weight: normal;
+}
+
+.button-box {
+  background-color: #ffffff;
+  width: 38%;
+  border-radius: 4px;
+  padding: 10px 10px 5px;
+  /* font-size: 0.745em; */
+}
+
+.message-box {
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 2px 20px;
+  font-size: 0.910em;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: space-around;
+  font-style: italic;
+  font-size: 0.735em;
+}
+
+.receive-button-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.recieve-msg-button {
+  background-color: #134d71;
+  color: #ffffff;
+  padding: 1px 14px;
+  font-size: 0.735em;
+  border-radius: 3px;
+}
+
+input {
+  margin-right: -90px;
+}
