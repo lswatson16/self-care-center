@@ -53,6 +53,7 @@ h3 {
   margin-top: 50px;
   padding: 10px 20px;
   font-size: 0.910em;
+  color: #000000;
 }
 
 .radio-buttons {
@@ -82,4 +83,8 @@ h3 {
 
 input {
   margin-right: 7px;
+}
+
+label {
+  color: #000000;
 }
