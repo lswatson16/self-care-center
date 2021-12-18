@@ -1,6 +1,7 @@
 // query selectors
-
-
+var selectedAffirmation = document.querySelector('#message-affirmation');
+var selectedMantra = document.querySelector('#message-mantra');
+var receiveButton = document.querySelector('.recieve-msg-button');
 
 var affirmations = [
   'I forgive myself and set myself free.',
@@ -14,8 +15,24 @@ var mantras = [
   'Every day is a second chance.'
 ]
 
+// event listeners
+receiveButton.addEventListener('click', showMessage);
+
+function showMessage() {
+  if (selectedAffirmation.checked) {
+      console.log('you selected affirmation');
+    } else if (selectedMantra.checked) {
+        console.log('you selected mantra');
+      }
+}
+
+
+
+
+
+
 // create an instance of the class
-var quote = new Motivation({motivationInfo.category: 'affirmation', motivationInfo.message: 'I am powerful!'});
+// var quote = new Motivation({motivationInfo.category: 'affirmation', motivationInfo.message: 'I am powerful!'});
 
 // get a random number
 // function getRandomInt(max) {
