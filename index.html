@@ -3,7 +3,6 @@
   <head>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="main.js"></script>
     <title>Self Care Center</title>
   </head>
   <body>
@@ -13,18 +12,25 @@
       </header>
       <h3>Which type of message?</h3>
       <div class='button-box'>
-        <div class= 'radio-buttons'>
-          <input type= 'radio'>affirmation</input>
-          <input type= 'radio'>mantra</input>
+        <div class='radio-buttons'>
+          <div class='affirmation-button'>
+            <input type='radio' id='message-affirmation' name='message-choice' value='affirmation'>
+              <label for= 'message-affirmation'>affirmation</label>
+          </div>
+          <div class='mantra-button'>
+            <input type='radio' id='message-mantra' name='message-choice' value='mantra'>
+              <label for= 'message-mantra'>mantra</label>
+          </div>
         </div>
-        <div class= 'receive-button-box'>
-          <button class= 'recieve-msg-button'>Receive Message</button>
+        <div class='receive-button-box'>
+          <button class='recieve-msg-button'>Receive Message</button>
         </div>
       </div>
-      <div class= 'message-box'>
-        <img src=''>
-        <h5 class= 'message'>This is your affirmation for the day</h5>
+      <div class='message-box'>
+        <img src='./assets/meditate.svg' alt='meditate icon'>
+        <h5 class='message-displayed'></h5>
       </div>
     </main>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
