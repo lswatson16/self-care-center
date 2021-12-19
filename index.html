@@ -9,9 +9,9 @@
     <main>
       <header>
         <h1>✨ Self Care Center ✨</h1>
+        <h3>Which type of message?</h3>
       </header>
-      <h3>Which type of message?</h3>
-      <div class='button-box'>
+      <section class='button-box'>
         <div class='radio-buttons'>
           <div class='affirmation-button'>
             <input type='radio' id='select-affirmation' name='message-choice' value='affirmation' checked="checked">
@@ -25,12 +25,18 @@
         <div class='receive-button-box'>
           <button class='recieve-msg-button'>Receive Message</button>
         </div>
-      </div>
-      <div class='message-box'>
+      </section>
+      <section class='message-box'>
         <img src='./assets/meditate.svg' alt='meditate icon'>
         <h5 class='message-displayed hidden'></h5>
         <button id='favorite' class='hidden'>Favorite</button>
-      </div>
+      </section>
+      <section class='list-favorites-viewpage'>
+        <article></article>
+      </section>
+      <footer>
+        <button id='view-favorites-button' class='hidden'>View Favorites</button>
+      </footer>
     </main>
     <script type="text/javascript" src="main.js"></script>
   </body>

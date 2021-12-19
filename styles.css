@@ -76,6 +76,10 @@ h3 {
   margin-top: 10px;
 }
 
+#view-favorites-button {
+  margin-top: 20px;
+}
+
 button {
   background-color: #134d71;
   color: #ffffff;

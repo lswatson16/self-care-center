@@ -5,7 +5,7 @@ var receiveButton = document.querySelector('.recieve-msg-button');
 var messageDisplayed = document.querySelector('.message-displayed');
 var meditateIcon = document.querySelector('img');
 var favoriteButton = document.querySelector('#favorite');
-
+var viewFavoritesButton = document.querySelector('#view-favorites-button');
 
 var affirmations = [
   'I forgive myself and set myself free.',
@@ -47,6 +47,7 @@ var favorites = [];
 // event listeners 👇
 receiveButton.addEventListener('click', randomMessage);
 favoriteButton.addEventListener('click', addToFavorites);
+viewFavoritesButton.addEventListener('click', viewListOfFavs);
 
 // functions and event handlers 👇
 
@@ -67,6 +68,7 @@ function randomMessage() {
   messageDisplayed.classList.remove('hidden');
   // favorite button should appear
   favoriteButton.classList.remove('hidden');
+  viewFavoritesButton.classList.remove('hidden');
 }
 
 function addToFavorites() {
@@ -76,9 +78,11 @@ function addToFavorites() {
   console.log('this string', messageDisplayed.innerText);
   favorites.push(messageDisplayed.innerText);
   console.log(favorites);
+}
 
-
-  // add "view favorites" button --
+// add "view favorites" button
+function viewListOfFavs() {
+  console.log('view my collection');
 }
 
 // create an instance of the class
