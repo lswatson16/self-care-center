@@ -25,7 +25,7 @@ h1, h3 {
 
 h1 {
   font-size: .975em;
-  padding-bottom: 10px;
+  padding-bottom: 24px;
 }
 
 h3 {
@@ -41,19 +41,21 @@ h3 {
 .button-box {
   background-color: #ffffff;
   width: 30%;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 6px 10px 5px;
+  margin-bottom: 16px;
 }
 
 .message-box {
   background-color: #ffffff;
-  border-radius: 4px;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  padding: 10px 20px;
+  padding: 20px 20px;
   font-size: 0.910em;
   color: #000000;
+  width: 40%;
 }
 
 .radio-buttons {
@@ -87,4 +89,9 @@ input {
 
 label {
   color: #000000;
+}
+
+img {
+  width: 50px;
+  height: 50px;
 }
