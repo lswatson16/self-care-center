@@ -1,9 +1,10 @@
 // query selector variables 👇
-var selectedAffirmation = document.querySelector('#message-affirmation');
-var selectedMantra = document.querySelector('#message-mantra');
+var selectedAffirmation = document.querySelector('#select-affirmation');
+var selectedMantra = document.querySelector('#select-mantra');
 var receiveButton = document.querySelector('.recieve-msg-button');
 var messageDisplayed = document.querySelector('.message-displayed');
 var meditateIcon = document.querySelector('img');
+
 
 var affirmations = [
   'I forgive myself and set myself free.',
@@ -49,24 +50,29 @@ receiveButton.addEventListener('click', randomMessage);
 // functions and event handlers 👇
 
 // get a random number
-function getRandomInt(array) {
-    return Math.floor(Math.random() * array.length);
-}
 // use random number as the index number for the selected array category
+function getRandomInt(array) {
+  return Math.floor(Math.random() * array.length);
+}
 
 function randomMessage() {
   if (selectedAffirmation.checked) {
-      // console.log('you selected affirmation');
-      // console.log(affirmations[0]);
-      // console.log(affirmations[getRandomInt(affirmations)]);
-      messageDisplayed.innerText = affirmations[getRandomInt(affirmations)];
-      meditateIcon.classList.add('hidden');
+    // console.log('you selected affirmation');
+    // console.log(affirmations[0]);
+    // console.log(affirmations[getRandomInt(affirmations)]);
+    messageDisplayed.innerText = affirmations[getRandomInt(affirmations)];
+    meditateIcon.classList.add('hidden');
   } else if (selectedMantra.checked) {
-      // console.log('you selected mantra');
-      // console.log(mantras[0]);
-      messageDisplayed.innerText = mantras[getRandomInt(mantras)];
-      meditateIcon.classList.add('hidden');
+    // console.log('you selected mantra');
+    // console.log(mantras[0]);
+    messageDisplayed.innerText = mantras[getRandomInt(mantras)];
+    meditateIcon.classList.add('hidden');
   }
+
+  // favorite button should appear
+  // when favorite button is clicked
+  // - the message displayed should be added to a new list of favorite messages (global variable)
+  // "view favorites" button --
 }
 
 // create an instance of the class
