@@ -4,6 +4,7 @@ var selectedMantra = document.querySelector('#select-mantra');
 var receiveButton = document.querySelector('.recieve-msg-button');
 var messageDisplayed = document.querySelector('.message-displayed');
 var meditateIcon = document.querySelector('img');
+var favoriteButton = document.querySelector('#favorite');
 
 
 var affirmations = [
@@ -65,8 +66,8 @@ function randomMessage() {
   meditateIcon.classList.add('hidden');
   messageDisplayed.classList.remove('hidden');
   // favorite button should appear
-  // favoriteButton.classList.remove('hidden');
-  // when favorite button is clicked
+  favoriteButton.classList.remove('hidden');
+  // when favorite button is clicked (event listener)
   // - the message displayed should be added to a new list of favorite messages (global variable)
 
 
