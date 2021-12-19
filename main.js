@@ -42,11 +42,11 @@ var mantras = [
 ];
 
 // global variables 👇
-
+var favorites = [];
 
 // event listeners 👇
 receiveButton.addEventListener('click', randomMessage);
-
+favoriteButton.addEventListener('click', addToFavorites);
 
 // functions and event handlers 👇
 
@@ -67,9 +67,15 @@ function randomMessage() {
   messageDisplayed.classList.remove('hidden');
   // favorite button should appear
   favoriteButton.classList.remove('hidden');
+}
+
+function addToFavorites() {
   // when favorite button is clicked (event listener)
   // - the message displayed should be added to a new list of favorite messages (global variable)
-
+  console.log('add to favorites');
+  console.log('this string', messageDisplayed.innerText);
+  favorites.push(messageDisplayed.innerText);
+  console.log(favorites);
 
 
   // add "view favorites" button --
