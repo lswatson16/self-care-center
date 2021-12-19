@@ -57,22 +57,21 @@ function getRandomInt(array) {
 
 function randomMessage() {
   if (selectedAffirmation.checked) {
-    // console.log('you selected affirmation');
-    // console.log(affirmations[0]);
-    // console.log(affirmations[getRandomInt(affirmations)]);
     messageDisplayed.innerText = affirmations[getRandomInt(affirmations)];
-    meditateIcon.classList.add('hidden');
   } else if (selectedMantra.checked) {
-    // console.log('you selected mantra');
-    // console.log(mantras[0]);
     messageDisplayed.innerText = mantras[getRandomInt(mantras)];
-    meditateIcon.classList.add('hidden');
   }
 
+  meditateIcon.classList.add('hidden');
+  messageDisplayed.classList.remove('hidden');
   // favorite button should appear
+  // favoriteButton.classList.remove('hidden');
   // when favorite button is clicked
   // - the message displayed should be added to a new list of favorite messages (global variable)
-  // "view favorites" button --
+
+
+
+  // add "view favorites" button --
 }
 
 // create an instance of the class
