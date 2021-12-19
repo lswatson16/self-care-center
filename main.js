@@ -3,6 +3,7 @@ var selectedAffirmation = document.querySelector('#message-affirmation');
 var selectedMantra = document.querySelector('#message-mantra');
 var receiveButton = document.querySelector('.recieve-msg-button');
 var messageDisplayed = document.querySelector('.message-displayed');
+var meditateIcon = document.querySelector('img');
 
 var affirmations = [
   'I forgive myself and set myself free.',
@@ -37,10 +38,12 @@ function randomMessage() {
       // console.log(affirmations[0]);
       // console.log(affirmations[getRandomInt(affirmations)]);
       messageDisplayed.innerText = affirmations[getRandomInt(affirmations)];
+      meditateIcon.classList.add('hidden');
   } else if (selectedMantra.checked) {
       // console.log('you selected mantra');
       // console.log(mantras[0]);
       messageDisplayed.innerText = mantras[getRandomInt(mantras)];
+      meditateIcon.classList.add('hidden');
   }
 }
 
