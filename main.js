@@ -57,6 +57,7 @@ receiveButton.addEventListener('click', randomMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 viewFavoritesButton.addEventListener('click', viewListOfFavs);
 returnButton.addEventListener('click', returnToMain);
+// removeButton.addEventListener('click', removeMessage);
 
 
 // functions and event handlers 👇
@@ -107,9 +108,13 @@ function viewListOfFavs() {
   // iteration to create a new listed item for each favorite message and display on page
   for (i = 0; i < favorites.length; i++) {
     var listedFavorite = document.createElement('div');
+    var removeButton = document.createElement('button');
     favMessageList.appendChild(listedFavorite);
+    favMessageList.appendChild(removeButton);
     listedFavorite.classList.add('listed-item');
+    removeButton.classList.add('remove-button');
     listedFavorite.innerText = favorites[i];
+    removeButton.innerText = 'Remove Message';
   }
 }
 
@@ -120,3 +125,7 @@ function returnToMain() {
   question.classList.remove('hidden');
   returnButton.classList.add('hidden');
 }
+
+// function removeMessage() {
+//   console.log('removing message');
+// }
