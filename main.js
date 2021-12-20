@@ -92,6 +92,7 @@ function addToFavorites() {
 
 // add "view favorites" button
 function viewListOfFavs() {
+  favMessageList.innerHTML = '';
   console.log('view my collection');
   // messageDisplayed.classList.add('hidden');
   // buttonBox.classList.add('hidden');
@@ -101,6 +102,7 @@ function viewListOfFavs() {
   favoriteViewPage.classList.remove('hidden');
   mainPageView.classList.add('hidden');
   viewFavoritesButton.classList.add('hidden');
+  returnButton.classList.remove('hidden');
 
   // iteration to create a new listed item for each favorite message and display on page
   for (i = 0; i < favorites.length; i++) {
@@ -116,4 +118,5 @@ function returnToMain() {
   mainPageView.classList.remove('hidden');
   viewFavoritesButton.classList.remove('hidden');
   question.classList.remove('hidden');
+  returnButton.classList.add('hidden');
 }
