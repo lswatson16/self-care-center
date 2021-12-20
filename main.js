@@ -69,15 +69,14 @@ favoriteViewPage.addEventListener('click', function(e) {
     console.log(e.srcElement);
     console.log(e.srcElement.previousElementSibling);
     console.log(e.srcElement.previousElementSibling.innerText);
-    // var removeButton = document.querySelector('.remove-button');
+
     var messageToBeRemoved = e.srcElement.previousElementSibling.innerText;
-    // console.log('the sibling element:', siblingElement);
-    // console.log('the sibling elements text:', siblingElement.innerText);
     var indexOfMessageToBeRemoved = favorites.indexOf(messageToBeRemoved);
     console.log(indexOfMessageToBeRemoved);
     console.log('favorites', favorites);
     favorites.splice(indexOfMessageToBeRemoved, 1);
     console.log('favorites', favorites);
+
     // display the changes on the DOM
     viewListOfFavs();
   }
