@@ -40,7 +40,7 @@ h3 {
 
 .button-box {
   background-color: #ffffff;
-  width: 30%;
+  width: 60%;
   border-radius: 6px;
   padding: 6px 10px 5px;
   margin-bottom: 16px;
@@ -56,7 +56,7 @@ h3 {
   padding: 20px 20px;
   font-size: 0.910em;
   color: #000000;
-  width: 40%;
+  width: 85%;
 }
 
 .radio-buttons {
@@ -78,6 +78,13 @@ h3 {
 
 #view-favorites-button {
   margin-top: 20px;
+}
+
+.main-page {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {

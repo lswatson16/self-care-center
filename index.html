@@ -9,32 +9,41 @@
     <main>
       <header>
         <h1>✨ Self Care Center ✨</h1>
-        <h3>Which type of message?</h3>
+        <h3 id='question'>Which type of message?</h3>
       </header>
-      <section class='button-box'>
-        <div class='radio-buttons'>
-          <div class='affirmation-button'>
-            <input type='radio' id='select-affirmation' name='message-choice' value='affirmation' checked="checked">
+
+      <section class='main-page'>
+        <div class='button-box'>
+          <div class='radio-buttons'>
+            <div class='affirmation-button'>
+              <input type='radio' id='select-affirmation' name='message-choice' value='affirmation' checked="checked">
               <label for= 'select-affirmation'>affirmation</label>
-          </div>
-          <div class='mantra-button'>
-            <input type='radio' id='select-mantra' name='message-choice' value='mantra'>
+            </div>
+            <div class='mantra-button'>
+              <input type='radio' id='select-mantra' name='message-choice' value='mantra'>
               <label for= 'select-mantra'>mantra</label>
+            </div>
+          </div>
+          <div class='receive-button-box'>
+            <button class='recieve-msg-button'>Receive Message</button>
           </div>
         </div>
-        <div class='receive-button-box'>
-          <button class='recieve-msg-button'>Receive Message</button>
+
+        <div class='message-box'>
+          <img src='./assets/meditate.svg' alt='meditate icon'>
+          <h5 class='message-displayed hidden'></h5>
+          <button id='favorite' class='hidden'>Favorite</button>
         </div>
       </section>
-      <section class='message-box'>
-        <img src='./assets/meditate.svg' alt='meditate icon'>
-        <h5 class='message-displayed hidden'></h5>
-        <button id='favorite' class='hidden'>Favorite</button>
+
+      <section class='list-favorites-viewpage hidden'>
+        <h3>💛 Favorite Messages 💛</h3>
+        <div class='favorite-message-list'></div>
+        <button id='return'>Return to Main</button>
       </section>
-      <section class='list-favorites-viewpage'>
-        <article></article>
-      </section>
+
       <footer>
+        <!-- add viewFav button and return button -->
         <button id='view-favorites-button' class='hidden'>View Favorites</button>
       </footer>
     </main>

@@ -6,6 +6,13 @@ var messageDisplayed = document.querySelector('.message-displayed');
 var meditateIcon = document.querySelector('img');
 var favoriteButton = document.querySelector('#favorite');
 var viewFavoritesButton = document.querySelector('#view-favorites-button');
+var favMessageList = document.querySelector('.favorite-message-list');
+var buttonBox = document.querySelector('.button-box');
+var messageBox = document.querySelector('.message-box');
+var question = document.querySelector('#question');
+var favoriteViewPage = document.querySelector('.list-favorites-viewpage');
+var mainPageView = document.querySelector('.main-page');
+
 
 var affirmations = [
   'I forgive myself and set myself free.',
@@ -68,7 +75,7 @@ function randomMessage() {
   messageDisplayed.classList.remove('hidden');
   // favorite button should appear
   favoriteButton.classList.remove('hidden');
-  viewFavoritesButton.classList.remove('hidden');
+
 }
 
 function addToFavorites() {
@@ -78,11 +85,29 @@ function addToFavorites() {
   console.log('this string', messageDisplayed.innerText);
   favorites.push(messageDisplayed.innerText);
   console.log(favorites);
+  viewFavoritesButton.classList.remove('hidden');
 }
 
 // add "view favorites" button
 function viewListOfFavs() {
   console.log('view my collection');
+  // messageDisplayed.classList.add('hidden');
+  // buttonBox.classList.add('hidden');
+  // messageBox.classList.add('hidden');
+  question.classList.add('hidden');
+  // viewFavoritesButton.classList.add('hidden');
+  favoriteViewPage.classList.remove('hidden');
+  mainPageView.classList.add('hidden');
+  viewFavoritesButton.classList.add('hidden');
+
+  // iteration to create a new listed item for each favorite message and display on page
+  for (i = 0; i < favorites.length; i++) {
+    var listedFavorite = document.createElement('div');
+    favMessageList.appendChild(listedFavorite);
+    listedFavorite.classList.add('listed-item');
+    listedFavorite.innerText = favorites[i];
+  }
+
 }
 
 // create an instance of the class
