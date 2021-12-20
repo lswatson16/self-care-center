@@ -12,6 +12,7 @@ var messageBox = document.querySelector('.message-box');
 var question = document.querySelector('#question');
 var favoriteViewPage = document.querySelector('.list-favorites-viewpage');
 var mainPageView = document.querySelector('.main-page');
+var returnButton = document.querySelector('#return');
 
 
 var affirmations = [
@@ -55,6 +56,8 @@ var favorites = [];
 receiveButton.addEventListener('click', randomMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 viewFavoritesButton.addEventListener('click', viewListOfFavs);
+returnButton.addEventListener('click', returnToMain);
+
 
 // functions and event handlers 👇
 
@@ -75,7 +78,6 @@ function randomMessage() {
   messageDisplayed.classList.remove('hidden');
   // favorite button should appear
   favoriteButton.classList.remove('hidden');
-
 }
 
 function addToFavorites() {
@@ -107,7 +109,11 @@ function viewListOfFavs() {
     listedFavorite.classList.add('listed-item');
     listedFavorite.innerText = favorites[i];
   }
-
 }
 
-// create an instance of the class
+function returnToMain() {
+  favoriteViewPage.classList.add('hidden');
+  mainPageView.classList.remove('hidden');
+  viewFavoritesButton.classList.remove('hidden');
+  question.classList.remove('hidden');
+}
