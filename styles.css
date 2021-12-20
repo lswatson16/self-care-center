@@ -80,6 +80,17 @@ h3 {
   margin-top: 20px;
 }
 
+.remove-button {
+  height: 50%;
+  display: flex;
+  align-self: center;
+}
+
+.favorite-message-box {
+  display: flex;
+  justify-content: space-between;
+}
+
 .main-page {
   width: 50%;
   display: flex;

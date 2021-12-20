@@ -109,12 +109,21 @@ function viewListOfFavs() {
   for (i = 0; i < favorites.length; i++) {
     var listedFavorite = document.createElement('p');
     var removeButton = document.createElement('button');
-    favMessageList.appendChild(listedFavorite);
-    favMessageList.appendChild(removeButton);
+
+    // favMessageList.appendChild(listedFavorite);
+    // favMessageList.appendChild(removeButton);
+
+    // try putting in div
+    var favoriteMessageBox = document.createElement('div');
+    favMessageList.appendChild(favoriteMessageBox)
+    favoriteMessageBox.appendChild(listedFavorite);
+    favoriteMessageBox.appendChild(removeButton);
+
     listedFavorite.classList.add('listed-item');
     removeButton.classList.add('remove-button');
+    favoriteMessageBox.classList.add('favorite-message-box');
     listedFavorite.innerText = favorites[i];
-    removeButton.innerText = 'Remove Message';
+    removeButton.innerText = 'Remove';
   }
 }
 
