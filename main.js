@@ -14,7 +14,6 @@ var favoriteViewPage = document.querySelector('.favorites-viewpage');
 var mainPageView = document.querySelector('.main-page');
 var returnButton = document.querySelector('#return');
 
-
 var affirmations = [
   'I forgive myself and set myself free.',
   'I believe I can be all that I want to be.',
@@ -64,6 +63,13 @@ favoriteViewPage.addEventListener('click', function(e) {
   if (e.target && e.target.matches('.remove-button')) {
     console.log('do something, element clicked');
     console.log(e);
+    var removeButton = document.querySelector('.remove-button');
+    var siblingElement = removeButton.previousElementSibling;
+    console.log(siblingElement);
+    console.log(siblingElement.innerText);
+    var indexOfSiblingElementText = favorites.indexOf(siblingElement.innerText);
+    console.log(indexOfSiblingElementText);
+
   }
 });
 
