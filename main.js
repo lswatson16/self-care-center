@@ -60,7 +60,12 @@ returnButton.addEventListener('click', returnToMain);
 // removeButton.addEventListener('click', removeMessage);
 // Error: "removeButton is not defined" because the element does not exist when the page loads
 // Solution: event delegation - https://stackoverflow.com/questions/34896106/attach-event-to-dynamic-elements-in-javascript
-
+favoriteViewPage.addEventListener('click', function(e) {
+  if (e.target && e.target.matches('.remove-button')) {
+    console.log('do something, element clicked');
+    console.log(e);
+  }
+});
 
 
 // functions and event handlers 👇
@@ -124,6 +129,7 @@ function viewListOfFavs() {
     listedFavorite.classList.add('listed-item');
     removeButton.classList.add('remove-button');
     favoriteMessageBox.classList.add('favorite-message-box');
+
     listedFavorite.innerText = favorites[i];
     removeButton.innerText = 'Remove';
     // give the button an id number that is same as the index number
