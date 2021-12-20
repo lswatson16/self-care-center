@@ -14,6 +14,7 @@ var favoriteViewPage = document.querySelector('.favorites-viewpage');
 var mainPageView = document.querySelector('.main-page');
 var returnButton = document.querySelector('#return');
 
+
 var affirmations = [
   'I forgive myself and set myself free.',
   'I believe I can be all that I want to be.',
@@ -50,25 +51,34 @@ var mantras = [
 
 // global variables 👇
 var favorites = [];
+var favoriteMessageBox;
 
 // event listeners 👇
 receiveButton.addEventListener('click', randomMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 viewFavoritesButton.addEventListener('click', viewListOfFavs);
 returnButton.addEventListener('click', returnToMain);
+
 // removeButton.addEventListener('click', removeMessage);
 // Error: "removeButton is not defined" because the element does not exist when the page loads
 // Solution: event delegation - https://stackoverflow.com/questions/34896106/attach-event-to-dynamic-elements-in-javascript
 favoriteViewPage.addEventListener('click', function(e) {
   if (e.target && e.target.matches('.remove-button')) {
-    console.log('do something, element clicked');
-    console.log(e);
-    var removeButton = document.querySelector('.remove-button');
-    var siblingElement = removeButton.previousElementSibling;
-    console.log(siblingElement);
-    console.log(siblingElement.innerText);
-    var indexOfSiblingElementText = favorites.indexOf(siblingElement.innerText);
-    console.log(indexOfSiblingElementText);
+    console.log('remove button was clicked, do something,');
+    // console.log(e);
+    // the element that was clicked, console log e.srcElement
+    console.log(e.srcElement);
+    console.log(e.srcElement.previousElementSibling);
+    console.log(e.srcElement.previousElementSibling.innerText);
+    // var removeButton = document.querySelector('.remove-button');
+    var messageToBeRemoved = e.srcElement.previousElementSibling.innerText;
+    // console.log('the sibling element:', siblingElement);
+    // console.log('the sibling elements text:', siblingElement.innerText);
+    var indexOfMessageToBeRemoved = favorites.indexOf(messageToBeRemoved);
+    console.log(indexOfMessageToBeRemoved);
+    console.log('favorites', favorites);
+    favorites.splice(indexOfMessageToBeRemoved, 1);
+    console.log('favorites', favorites);
 
   }
 });
@@ -127,7 +137,7 @@ function viewListOfFavs() {
     // favMessageList.appendChild(removeButton);
 
     // try putting the new elements in a new div
-    var favoriteMessageBox = document.createElement('div');
+    favoriteMessageBox = document.createElement('div');
     favMessageList.appendChild(favoriteMessageBox)
     favoriteMessageBox.appendChild(listedFavorite);
     favoriteMessageBox.appendChild(removeButton);
