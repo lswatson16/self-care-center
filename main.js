@@ -4,13 +4,13 @@ var selectedMantra = document.querySelector('#select-mantra');
 var receiveButton = document.querySelector('.recieve-msg-button');
 var messageDisplayed = document.querySelector('.message-displayed');
 var meditateIcon = document.querySelector('img');
-var favoriteButton = document.querySelector('#favorite');
+var favoriteButton = document.querySelector('#favorite-button');
 var viewFavoritesButton = document.querySelector('#view-favorites-button');
-var favMessageList = document.querySelector('.favorite-message-list');
+var favMessageList = document.querySelector('.favorites-list');
 var buttonBox = document.querySelector('.button-box');
 var messageBox = document.querySelector('.message-box');
 var question = document.querySelector('#question');
-var favoriteViewPage = document.querySelector('.list-favorites-viewpage');
+var favoriteViewPage = document.querySelector('.favorites-viewpage');
 var mainPageView = document.querySelector('.main-page');
 var returnButton = document.querySelector('#return');
 
@@ -58,6 +58,9 @@ favoriteButton.addEventListener('click', addToFavorites);
 viewFavoritesButton.addEventListener('click', viewListOfFavs);
 returnButton.addEventListener('click', returnToMain);
 // removeButton.addEventListener('click', removeMessage);
+// Error: "removeButton is not defined" because the element does not exist when the page loads
+// Solution: event delegation - https://stackoverflow.com/questions/34896106/attach-event-to-dynamic-elements-in-javascript
+
 
 
 // functions and event handlers 👇
@@ -77,7 +80,6 @@ function randomMessage() {
 
   meditateIcon.classList.add('hidden');
   messageDisplayed.classList.remove('hidden');
-  // favorite button should appear
   favoriteButton.classList.remove('hidden');
 }
 
@@ -94,12 +96,12 @@ function addToFavorites() {
 // add "view favorites" button
 function viewListOfFavs() {
   favMessageList.innerHTML = '';
-  console.log('view my collection');
+  // console.log('view my collection');
   // messageDisplayed.classList.add('hidden');
   // buttonBox.classList.add('hidden');
   // messageBox.classList.add('hidden');
-  question.classList.add('hidden');
   // viewFavoritesButton.classList.add('hidden');
+  question.classList.add('hidden');
   favoriteViewPage.classList.remove('hidden');
   mainPageView.classList.add('hidden');
   viewFavoritesButton.classList.add('hidden');
@@ -113,7 +115,7 @@ function viewListOfFavs() {
     // favMessageList.appendChild(listedFavorite);
     // favMessageList.appendChild(removeButton);
 
-    // try putting in div
+    // try putting the new elements in a new div
     var favoriteMessageBox = document.createElement('div');
     favMessageList.appendChild(favoriteMessageBox)
     favoriteMessageBox.appendChild(listedFavorite);
@@ -124,6 +126,8 @@ function viewListOfFavs() {
     favoriteMessageBox.classList.add('favorite-message-box');
     listedFavorite.innerText = favorites[i];
     removeButton.innerText = 'Remove';
+    // give the button an id number that is same as the index number
+    // splice the (i) to remove the item from favorites
   }
 }
 

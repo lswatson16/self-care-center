@@ -119,12 +119,12 @@ img {
   height: 50px;
 }
 
-/* #favorites {
+/* #favorites-header {
   display: flex;
   justify-content: center;
 } */
 
-.favorite-message-list {
+.favorites-list {
   background-color: #ffffff;
   border-radius: 6px;
   margin-bottom: 25px;
@@ -133,7 +133,7 @@ img {
   padding: 6px 26px 10px
 }
 
-.list-favorites-viewpage {
+.favorites-viewpage {
   width: 70%;
   display: flex;
   flex-direction: column;
