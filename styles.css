@@ -108,6 +108,27 @@ img {
   height: 50px;
 }
 
+/* #favorites {
+  display: flex;
+  justify-content: center;
+} */
+
+.favorite-message-list {
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  width: 85%;
+  margin-top: 6px;
+  padding: 6px 26px 10px
+}
+
+.list-favorites-viewpage {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hidden {
   /* display:none !important; */
   display: none;

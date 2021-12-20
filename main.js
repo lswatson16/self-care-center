@@ -107,7 +107,7 @@ function viewListOfFavs() {
 
   // iteration to create a new listed item for each favorite message and display on page
   for (i = 0; i < favorites.length; i++) {
-    var listedFavorite = document.createElement('div');
+    var listedFavorite = document.createElement('p');
     var removeButton = document.createElement('button');
     favMessageList.appendChild(listedFavorite);
     favMessageList.appendChild(removeButton);
