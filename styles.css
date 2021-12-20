@@ -80,6 +80,17 @@ h3 {
   margin-top: 20px;
 }
 
+.remove-button {
+  height: 50%;
+  display: flex;
+  align-self: center;
+}
+
+.favorite-message-box {
+  display: flex;
+  justify-content: space-between;
+}
+
 .main-page {
   width: 50%;
   display: flex;
@@ -106,6 +117,27 @@ label {
 img {
   width: 50px;
   height: 50px;
+}
+
+/* #favorites-header {
+  display: flex;
+  justify-content: center;
+} */
+
+.favorites-list {
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  width: 85%;
+  margin-top: 6px;
+  padding: 6px 26px 10px
+}
+
+.favorites-viewpage {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hidden {

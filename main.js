@@ -4,13 +4,13 @@ var selectedMantra = document.querySelector('#select-mantra');
 var receiveButton = document.querySelector('.recieve-msg-button');
 var messageDisplayed = document.querySelector('.message-displayed');
 var meditateIcon = document.querySelector('img');
-var favoriteButton = document.querySelector('#favorite');
+var favoriteButton = document.querySelector('#favorite-button');
 var viewFavoritesButton = document.querySelector('#view-favorites-button');
-var favMessageList = document.querySelector('.favorite-message-list');
+var favMessageList = document.querySelector('.favorites-list');
 var buttonBox = document.querySelector('.button-box');
 var messageBox = document.querySelector('.message-box');
 var question = document.querySelector('#question');
-var favoriteViewPage = document.querySelector('.list-favorites-viewpage');
+var favoriteViewPage = document.querySelector('.favorites-viewpage');
 var mainPageView = document.querySelector('.main-page');
 var returnButton = document.querySelector('#return');
 
@@ -57,12 +57,34 @@ receiveButton.addEventListener('click', randomMessage);
 favoriteButton.addEventListener('click', addToFavorites);
 viewFavoritesButton.addEventListener('click', viewListOfFavs);
 returnButton.addEventListener('click', returnToMain);
+
 // removeButton.addEventListener('click', removeMessage);
+// Error: "removeButton is not defined" because the element does not exist when the page loads
+// Solution: event delegation & bubbling - https://stackoverflow.com/questions/34896106/attach-event-to-dynamic-elements-in-javascript
+favoriteViewPage.addEventListener('click', function(e) {
+  if (e.target && e.target.matches('.remove-button')) {
+    console.log('remove button was clicked, do something,');
+    // console.log(e);
+    // the element that was clicked, console log e.srcElement
+    console.log(e.srcElement);
+    console.log(e.srcElement.previousElementSibling);
+    console.log(e.srcElement.previousElementSibling.innerText);
+
+    var messageToBeRemoved = e.srcElement.previousElementSibling.innerText;
+    var indexOfMessageToBeRemoved = favorites.indexOf(messageToBeRemoved);
+    console.log(indexOfMessageToBeRemoved);
+    console.log('favorites', favorites);
+    favorites.splice(indexOfMessageToBeRemoved, 1);
+    console.log('favorites', favorites);
+
+    // display the changes on the DOM
+    viewListOfFavs();
+  }
+});
 
 
 // functions and event handlers 👇
 
-// get a random number
 // use random number as the index number for the selected array category
 function getRandomInt(array) {
   return Math.floor(Math.random() * array.length);
@@ -77,7 +99,6 @@ function randomMessage() {
 
   meditateIcon.classList.add('hidden');
   messageDisplayed.classList.remove('hidden');
-  // favorite button should appear
   favoriteButton.classList.remove('hidden');
 }
 
@@ -94,27 +115,34 @@ function addToFavorites() {
 // add "view favorites" button
 function viewListOfFavs() {
   favMessageList.innerHTML = '';
-  console.log('view my collection');
-  // messageDisplayed.classList.add('hidden');
-  // buttonBox.classList.add('hidden');
-  // messageBox.classList.add('hidden');
   question.classList.add('hidden');
-  // viewFavoritesButton.classList.add('hidden');
   favoriteViewPage.classList.remove('hidden');
   mainPageView.classList.add('hidden');
   viewFavoritesButton.classList.add('hidden');
   returnButton.classList.remove('hidden');
 
-  // iteration to create a new listed item for each favorite message and display on page
-  for (i = 0; i < favorites.length; i++) {
-    var listedFavorite = document.createElement('div');
-    var removeButton = document.createElement('button');
-    favMessageList.appendChild(listedFavorite);
-    favMessageList.appendChild(removeButton);
-    listedFavorite.classList.add('listed-item');
-    removeButton.classList.add('remove-button');
-    listedFavorite.innerText = favorites[i];
-    removeButton.innerText = 'Remove Message';
+  // if favorites list is not empty
+  if (favorites.length > 0) {
+    // iteration to create a new listed item for each favorite message and display on page
+    for (i = 0; i < favorites.length; i++) {
+      var listedFavorite = document.createElement('p');
+      var removeButton = document.createElement('button');
+      var favoriteMessageBox = document.createElement('div');
+
+      favMessageList.appendChild(favoriteMessageBox)
+      favoriteMessageBox.appendChild(listedFavorite);
+      favoriteMessageBox.appendChild(removeButton);
+
+      listedFavorite.classList.add('listed-item');
+      removeButton.classList.add('remove-button');
+      favoriteMessageBox.classList.add('favorite-message-box');
+
+      listedFavorite.innerText = favorites[i];
+      removeButton.innerText = 'Remove';
+    }
+  } else {
+    console.log('no favorites');
+    favMessageList.innerText = 'You do not have any favorites saved.';
   }
 }
 
